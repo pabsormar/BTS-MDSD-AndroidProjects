@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Activity Manager</string>
+    <string name="startActivityText">Start a new Activity</string>
+    <string name="displayRetrievedInfo">Display info</string>
+    <string name="defaultState">No info returned</string>
+    <string name="hintText">Write to return...</string>
+    <string name="okText">OK</string>
+</resources>
