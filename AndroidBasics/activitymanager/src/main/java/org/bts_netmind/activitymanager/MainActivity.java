@@ -38,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener
             public void onClick(View v)
             {
                 //Toast.makeText(v.getContext(), "Display info button clicked", Toast.LENGTH_SHORT).show();
-                if (retInfoString != null)
+                if (retInfoString != null && !retInfoString.isEmpty())
                     dispInfo_TextView.setText(retInfoString);
             }
         });
@@ -103,8 +103,8 @@ public class MainActivity extends Activity implements View.OnClickListener
             Intent actIntent = new Intent(this, SecondActivity.class);
             this.startActivityForResult(actIntent, MainActivity.ACTIVITY_REQUEST_CODE);
         }
-        else if (v.getId() == R.id.layoutMain);
-        //Toast.makeText(v.getContext(), "Main Act layout view clicked", Toast.LENGTH_SHORT).show();
+        else if (v.getId() == R.id.layoutMain)
+            Toast.makeText(v.getContext(), "Main Act layout view clicked", Toast.LENGTH_SHORT).show();
     }
 
     @Override
