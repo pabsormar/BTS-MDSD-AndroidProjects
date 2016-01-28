@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GUI Design</string>
+    <string name="img_description">drawable file</string>
+    <string name="left_btn_text">Accept</string>
+    <string name="center_btn_text">Cancel</string>
+    <string name="right_btn_text">Apply</string>
+    <string name="edit_text_hint">Nationality...</string>
+    <string name="radio_btn_text">UE citizen</string>
+</resources>
