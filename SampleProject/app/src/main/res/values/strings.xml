@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sample Project</string>
+    <string name="bottomBtnText">Cancel</string>
+    <string name="topBtnText">Accept</string>
+    <string name="secondActTextView">Display info</string>
+    <string name="checkBoxText">OK</string>
+</resources>
