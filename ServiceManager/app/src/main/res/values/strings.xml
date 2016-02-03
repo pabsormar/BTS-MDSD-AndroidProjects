@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Service Manager</string>
+    <string name="txt_view_disclaimer">[Nothing to be showed]</string>
+    <string name="edt_txt_hint">Type something...</string>
+    <string name="small_btn_text">>></string>
+    <string name="top_btn_text">Start Service</string>
+    <string name="middle_btn_txt">Start bound Service</string>
+    <string name="bottom_btn_txt">Start IntentService</string>
+</resources>
