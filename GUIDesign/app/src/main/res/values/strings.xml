@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GUI Design</string>
+    <string name="no_img_description">blank</string>
+    <string name="img_description">drawable file</string>
+    <string name="left_btn_txt">Accept</string>
+    <string name="center_btn_txt">Cancel</string>
+    <string name="right_btn_txt">Apply</string>
+    <string name="edit_text_hint1">Name</string>
+    <string name="edit_text_hint2">Surname</string>
+    <string name="edit_text_hint3">Nationality...</string>
+    <string name="top_row_txt"><b><u>Passport</u></b></string>
+    <string name="middle_row_txt">Name: </string>
+    <string name="bottom_row_txt">Surname:</string>
+    <string name="radio_btn_txt">UE citizen</string>
+</resources>
+
