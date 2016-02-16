@@ -12,23 +12,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtViewHello"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="Hello World!" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnTrigLocalBroadcast"
-        android:text="@string/btn_trigger_localbroadcast_txt"
-        android:layout_alignParentBottom="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnTrigBroadcast"
-        android:text="@string/btn_trigger_broadcast_txt"
-        android:layout_above="@id/btnTrigLocalBroadcast" />
-
+        android:id="@+id/txtViewHello1"
+        android:text="Hello World!"/>
 </RelativeLayout>

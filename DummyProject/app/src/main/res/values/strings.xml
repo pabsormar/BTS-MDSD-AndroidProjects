@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">Br.Receiver Manager</string>
-    <string name="btn_trigger_broadcast_txt">Trigger Custom Broadcast</string>
-    <string name="btn_trigger_localbroadcast_txt">Trigger Local Broadcast</string>
+    <string name="app_name">Dummy Project</string>
 </resources>
