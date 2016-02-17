@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">GUI Design</string>
+    <string-array name="classmates">
+        <item>Juan</item>
+        <item>Laia</item>
+        <item>Samir</item>
+        <item>Vero</item>
+        <item>Pablo</item>
+        <item>Nastia</item>
+    </string-array>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
 

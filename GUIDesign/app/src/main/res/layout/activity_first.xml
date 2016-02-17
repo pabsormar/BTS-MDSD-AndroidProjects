@@ -10,7 +10,24 @@
         android:text="Hello World"
         android:id="@+id/txtViewHello1"
         android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"/>
+        android:paddingLeft="20dp"
+        style="@style/myStyle"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:layout_gravity="right"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_custom_style"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+        android:entries="@array/classmates"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +54,16 @@
             android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
             android:layout_below="@id/txtViewHello3"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            style="?android:borderlessButtonStyle"/>
     </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
