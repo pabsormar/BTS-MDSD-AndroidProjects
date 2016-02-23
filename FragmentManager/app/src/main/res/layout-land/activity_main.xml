@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayoutMainLandscape"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/frameLayoutMainLandscape"/>
+
+    <!-- You can set this statically here, but then it won't be removable. Try!
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="org.bts_netmind.fragmentmanager.FirstFragment"
+        android:id="@+id/fragmentFirst" />
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSwapFragment"
+        android:text="@string/btn_swap_fragment_text"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

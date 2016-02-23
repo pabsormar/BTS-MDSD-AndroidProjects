@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- For a statically-defined fragment, use 'android:name' and 'android:id'
+         DO NOT USE 'android:tag' (reserve that for dynamically-defined fragments)
+         -->
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fragmentFirst"
+        android:name="org.bts_netmind.fragmentmanager.FirstFragment"
+        tools:layout="@layout/fragment_first" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fragmentSecond"
+        android:name="org.bts_netmind.fragmentmanager.SecondFragment"
+        tools:layout="@layout/fragment_second" />
+
+</LinearLayout>
