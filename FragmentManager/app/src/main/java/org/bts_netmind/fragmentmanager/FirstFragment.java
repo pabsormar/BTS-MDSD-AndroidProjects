@@ -1,7 +1,6 @@
 package org.bts_netmind.fragmentmanager;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
