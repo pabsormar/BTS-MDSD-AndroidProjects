@@ -65,6 +65,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Firs
             {
                 Log.i(MainActivity.TAG_MAIN_ACTIVITY, "Layout 1 is in-layout and will be replaced");
                 fragTransaction.replace(R.id.frameLayoutMainLandscape, new SecondFragment(), this.getString(R.string.second_fragment_tag));
+                    fragTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     fragTransaction.commit();
                 this.land_LinLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.lightYellow));
             }
