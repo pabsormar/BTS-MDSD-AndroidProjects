@@ -1,6 +1,7 @@
 package org.bts_netmind.fragmentmanager;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -46,6 +47,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener
 
         return fragView;
     }
+
     // Although this method is deprecated in API23, onAttach(Context context) does not work properly yet for previous Android versions
     @Override
     public void onAttach(Activity hostActivity)

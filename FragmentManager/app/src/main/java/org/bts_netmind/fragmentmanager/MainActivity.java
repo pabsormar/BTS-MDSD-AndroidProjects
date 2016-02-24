@@ -25,7 +25,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Firs
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        if (this.getResources().getBoolean(R.bool.dual_pane))
+        //if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
         {
             // Add fragment dynamically
             FragmentManager fragManager = this.getFragmentManager();
@@ -85,15 +86,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Firs
         Log.i(MainActivity.TAG_MAIN_ACTIVITY, "onCommFromFragmentOne()");
 
         // A 'first fragment' tagged Fragment will only be present if it was added dynamically, meaning landscape orientation
-        //Fragment firstFragment = this.getFragmentManager().findFragmentByTag(this.getString(R.string.first_fragment_tag));
+        //View firstFragment = this.getFragmentManager().findFragmentByTag(this.getString(R.string.first_fragment_tag));
         //    Log.i(MainActivity.TAG_MAIN_ACTIVITY, String.valueOf(firstFragment != null));
 
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-        {
-            SecondFragment mySecondFragment = (SecondFragment) this.getFragmentManager().findFragmentById(R.id.fragmentSecond);
-                mySecondFragment.updateInfoTextView(String.valueOf(rNumber));
-        }
-        else     // landscape orientation
+        //if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        if (this.getResources().getBoolean(R.bool.dual_pane))     // landscape orientation
         {
             Bundle fragBundle = new Bundle();
                 fragBundle.putInt("randomNumberUpdate", (int) rNumber);
@@ -104,6 +101,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Firs
             FragmentTransaction myFragTrans = this.getFragmentManager().beginTransaction().replace(R.id.frameLayoutMainLandscape, mySecondFragment, this.getString(R.string.second_fragment_tag));
                 myFragTrans.commit();
             this.land_LinLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.lightYellow));
+        }
+        else
+        {
+            SecondFragment mySecondFragment = (SecondFragment) this.getFragmentManager().findFragmentById(R.id.fragmentSecond);
+            mySecondFragment.updateInfoTextView(String.valueOf(rNumber));
         }
     }
 }
