@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Resource Management</string>
+    <string name="text_view_hello_text">Hello world!</string>
+</resources>
