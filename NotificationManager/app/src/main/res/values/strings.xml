@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notification Manager</string>
+    <string name="notify_button_text">Add Notification</string>
+    <string name="notification_long_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="custom_notify_button_text">Add custom Notification</string>
+    <string name="custom_notify_text_1">A title</string>
+    <string name="custom_notify_text_2">A body</string>
+    <string name="custom_notify_text_3">A footnote</string>
+</resources>
