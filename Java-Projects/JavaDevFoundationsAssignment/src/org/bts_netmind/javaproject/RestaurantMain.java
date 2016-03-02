@@ -28,7 +28,7 @@ public class RestaurantMain implements OnlineOrderOps
 				System.out.println(aLine);
 			
 			myFInStream.close();
-		} 
+		}
 		catch (IOException e) { e.printStackTrace(); }
 	
 		// Reading the same file in a different way
@@ -44,10 +44,7 @@ public class RestaurantMain implements OnlineOrderOps
 			
 			myBuffReader.close();
 		} 
-		catch (IOException e) { e.printStackTrace(); }
-		
-	
-			
+		catch (IOException e) { e.printStackTrace(); }			
 	}
 
 	public static String readFile(File f)
