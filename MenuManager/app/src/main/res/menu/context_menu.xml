@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/addItem"
+        android:title="@string/popmenu_add_text"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/likeItem"
+        android:title="@string/contextmenu_like_text"
+        android:icon="@drawable/ic_action_like"/>
+    <item
+        android:id="@+id/dislikeItem"
+        android:title="@string/contextmenu_dislike_text"
+        android:icon="@drawable/ic_action_dislike"/>
+</menu>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Menu Manager</string>
+    <string name="hello_txtview_text">Hello World!</string>
+    <string name="menu_file_text">File</string>
+    <string name="menu_search_text">Search</string>
+    <string name="menu_quit_file">Quit</string>
+    <string name="menu_compare_text">Compare</string>
+    <string name="menu_copy_text">Copy</string>
+    <string name="menu_cut_text">Cut</string>
+    <string name="menu_paste_text">Paste</string>
+    <string name="contextmenu_like_text">Like</string>
+    <string name="contextmenu_dislike_text">Dislike</string>
+    <string name="popmenu_add_text">Add</string>
+</resources>
