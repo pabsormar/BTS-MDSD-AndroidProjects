@@ -11,4 +11,5 @@
     <string name="contextmenu_like_text">Like</string>
     <string name="contextmenu_dislike_text">Dislike</string>
     <string name="popmenu_add_text">Add</string>
+    <string name="search_hint">keyword...</string>
 </resources>

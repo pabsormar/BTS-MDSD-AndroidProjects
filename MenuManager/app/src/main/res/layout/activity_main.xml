@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/layoutMainActivity"
     tools:context="org.bts_netmind.menumanager.MainActivity">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar_main"
         android:layout_width="match_parent"
@@ -14,7 +15,6 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         tools:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

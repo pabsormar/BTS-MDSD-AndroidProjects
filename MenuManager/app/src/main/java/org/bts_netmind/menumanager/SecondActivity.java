@@ -1,5 +1,7 @@
 package org.bts_netmind.menumanager;
 
+import android.app.Activity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -27,8 +29,12 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Toolbar mToolbar = (Toolbar) this.findViewById(R.id.my_toolbar_second);
-        this.setSupportActionBar(mToolbar);
+        Toolbar mChildToolbar = (Toolbar) this.findViewById(R.id.my_toolbar_second);
+        this.setSupportActionBar(mChildToolbar);
+        // Enable the Up button (A Back button, actually)
+        // Make sure the corresponding import relates to the suppport v7 library
+        ActionBar mActionBar = this.getSupportActionBar();
+            mActionBar.setDisplayHomeAsUpEnabled(true);   // This line actually enables the UP button
 
         final View secondLayout = this.findViewById(R.id.layoutSecondActivity);
             secondLayout.setOnClickListener(this);
