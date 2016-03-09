@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataStorageManager</string>
+    <string name="default_text">Hello World!</string>
+    <string name="hint_text">Write something...</string>
+    <string name="btn_internal_storage_text">Save data on internal file</string>
+    <string name="btn_external_storage_text">Save data on external file</string>
+</resources>
