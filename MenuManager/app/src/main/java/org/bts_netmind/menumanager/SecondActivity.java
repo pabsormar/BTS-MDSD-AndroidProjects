@@ -119,7 +119,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     // Called when the Action mode is destroyed; the 'ActionMode' object is set to null
     @Override
-    public void onDestroyActionMode(ActionMode mode) { mActionMode =  null; }
+    public void onDestroyActionMode(ActionMode mode) { this.mActionMode =  null; }
 
     // This method handles the on-click events on the pop-up menu
     @Override
