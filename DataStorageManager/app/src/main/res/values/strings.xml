@@ -4,4 +4,6 @@
     <string name="hint_text">Write something...</string>
     <string name="btn_internal_storage_text">Save data on internal file</string>
     <string name="btn_external_storage_text">Save data on external file</string>
+    <string name="btn_create_database_text">Create database</string>
+    <string name="btn_get_files_text">Current files</string>
 </resources>

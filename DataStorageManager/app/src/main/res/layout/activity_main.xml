@@ -37,10 +37,25 @@
         android:text="@string/btn_internal_storage_text"
         android:layout_alignParentTop="true" />
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDataBase"
+        android:text="@string/btn_create_database_text"
+        android:layout_below="@id/btnInternalStorage"
+        android:layout_centerHorizontal="true"/>
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnExternalStorage"
         android:text="@string/btn_external_storage_text"
         android:layout_alignParentBottom="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGetFiles"
+        android:text="@string/btn_get_files_text"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnOk" />
 
 </RelativeLayout>

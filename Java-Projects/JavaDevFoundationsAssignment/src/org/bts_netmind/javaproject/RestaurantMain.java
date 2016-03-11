@@ -3,100 +3,74 @@ package org.bts_netmind.javaproject;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantMain implements OnlineOrderOps
+public class RestaurantMain
 {	
 	public static void main(String[] args) 
 	{
+		InterfaceOperator myOperator = new InterfaceOperator();
+		String myFilePath = "./onlineOrderSample.txt";
+		List<Object> myOrderArray = new ArrayList<>();	
+		//private Order[] anotherOrderArray = new Order[5];
+				
+		ArrayList<String> fileLineArray = readFile(myFilePath);		
 		
+		Dish aDish;
+		for (String anyString : fileLineArray) 
+		{
+			String[] mStringArray = anyString.split(",");
+			
+			switch (mStringArray[2])
+			{
+				case "st":
+					aDish = new Starter(mStringArray[1], mStringArray[3].matches("true"), mStringArray[4].matches("true"), 
+										mStringArray[5].matches("true"), mStringArray[6].matches("true"), mStringArray[7]);
+					break;
+					
+				case "mc":
+					aDish = new MainCourse(mStringArray[1], mStringArray[3].matches("true"), mStringArray[4].matches("true"), 
+										   mStringArray[5].matches("true"), mStringArray[6].matches("true"), mStringArray[7]);
+					break;
+				default:   // Using 'default' to ensure 'aDish' object initialisation
+					aDish = new Dessert(mStringArray[1], mStringArray[3].matches("true"), mStringArray[4].matches("true"), 
+										mStringArray[5].matches("true"), mStringArray[6].matches("true"), Integer.valueOf(mStringArray[7]));
+					break;		
+			}
+			System.out.println((aDish instanceof Dessert ? ((Dessert) aDish).toString() : ""));
+			myOrderArray.add(new Order(mStringArray[0], aDish));
+		}		
+			
+		System.out.println("Number of orders = " + myOperator.getNumberOrders(myOrderArray)); 
+		System.out.println(((Order) myOperator.getOrder(myOrderArray, 0)).getaDish().getDishName());		
 		
-		
-		// Reading from a file
+	}
+
+	private static ArrayList<String> readFile(String filePath)
+	{		
 		String aLine;
+		ArrayList<String> tempArrayList = new ArrayList<>();
+		
 		try 
 		{
-			final File myFile = new File("./onlineOrderSample.txt");
+			final File myFile = new File(filePath);
 			final FileInputStream myFInStream = new FileInputStream(myFile);     // throws 'FileNotFoundException'
 			final InputStreamReader myInStrReader = new InputStreamReader(myFInStream);
 			final BufferedReader myBuffReader = new BufferedReader(myInStrReader);
-
+			
+			aLine = myBuffReader.readLine();   // Dismisses the headers
 			while ((aLine = myBuffReader.readLine()) != null)
-				System.out.println(aLine);
+			{
+				tempArrayList.add(aLine);
+			}
 			
 			myFInStream.close();
 		}
 		catch (IOException e) { e.printStackTrace(); }
-	
-		// Reading the same file in a different way
-		String mLine;
-		try 
-		{
-			final File myFile = new File("./onlineOrderSample.txt");
-			final FileReader myFReader = new FileReader(myFile);
-			final BufferedReader myBuffReader = new BufferedReader(myFReader);
-			
-			while ((mLine = myBuffReader.readLine()) != null)
-				System.out.println(mLine);
-			
-			myBuffReader.close();
-		} 
-		catch (IOException e) { e.printStackTrace(); }			
-	}
-
-	public static String readFile(File f)
-	{
-		return null;
-	}
-	
-	@Override
-	public Object getOrder(List<Object> orderList, int orderIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getAllOrdersToString(List<Object> orderList) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object getDish(List<Object> dishList, int dishIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getAllDishToString(List<Object> dishList) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Object> getDishesByType(List<Object> dishList, String dishType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Object> getDishesByFeature(List<Object> dishList, String feature) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getStatsByDishType(List<Object> dishList, String dishType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getNumberOrders(List<Object> orderList) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return tempArrayList;		
 	}
 }
