@@ -22,9 +22,9 @@ public class MyContentProvider extends ContentProvider
     {
         // The database is created through the 'MyDatabase' constructor
         this.myDatabaseObject = new MyDatabase(this.getContext());
-        // Create the database table using 'onCreate()'
-        this.myDatabaseObject.getWritableDatabase();
-        
+        // Create the database table using 'onCreate()'; there is actually no need to do this here
+        //this.myDatabaseObject.getWritableDatabase();
+
         return true;
     }
 
@@ -79,7 +79,8 @@ public class MyContentProvider extends ContentProvider
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs)
     {
-        // TODO: Implement this to handle requests to update one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase db = this.myDatabaseObject.getWritableDatabase();
+
+        return db.update(ParamsDB.TABLE_NAME, values, selection, selectionArgs);
     }
 }
