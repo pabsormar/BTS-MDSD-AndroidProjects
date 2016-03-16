@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ContentProvider Manager</string>
+    <string name="txt_view_name_text">Name:</string>
+    <string name="txt_view_age_text">Age:</string>
+    <string name="txt_view_name_hint_text">Introduce name...</string>
+    <string name="txt_view_age_hint_text">Introduce age...</string>
+    <string name="btn_consult_db_text">Consult DB</string>
+    <string name="btn_delete_register_db_text">Delete register in DB</string>
+    <string name="btn_add_register_db_text">Add register to DB</string>
+</resources>
