@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             ContentValues insertValues = new ContentValues();
                 insertValues.put(ParamsDB.STUDENT_NAME, this.name_EdtTxt.getText().toString());
-                insertValues.put(ParamsDB.STUDENT_AGE, this.age_EdtTxt.getText().toString());
+                insertValues.put(ParamsDB.STUDENT_AGE, Integer.valueOf(this.age_EdtTxt.getText().toString()));
 
             Uri mUri = this.getContentResolver().insert(MyContentProvider.CONTENT_URI, insertValues);
 
