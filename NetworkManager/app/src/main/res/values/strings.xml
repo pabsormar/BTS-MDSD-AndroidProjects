@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Network Manager</string>
+    <string name="txt_view_main_text">Press to download an image...</string>
+    <string name="btn_read_feed_text">Read feed</string>
+</resources>
