@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Using a custom adapter for the 'ListView' -----------------------------------------------
 
         // 'ArrayList' with image references (DO NOT INCLUDE FILE EXTENSIONS!)
+
         String[] mListImages = {"androidicon", "iphoneicon", "windowsmobileicon",
                 "blackberryicon", "webosicon", "ubuntuicon", "win7icon", "macosxicon",
                 "linuxicon", "os2icon", "ubuntuicon", "win7icon", "macosxicon", "linuxicon",
