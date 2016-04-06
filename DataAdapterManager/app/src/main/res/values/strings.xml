@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataAdapterManager</string>
+    <string name="txt_view_title_text">A title</string>
+    <string name="txt_view_body_text">A body</string>
+    <string name="txt_view_list_header_text">Operating Systems</string>
+</resources>
+
