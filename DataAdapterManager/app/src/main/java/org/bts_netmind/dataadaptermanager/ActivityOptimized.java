@@ -1,10 +1,10 @@
 package org.bts_netmind.dataadaptermanager;
 
+import android.app.Activity;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,21 +17,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,
-                                                        AdapterView.OnItemLongClickListener
-{
-    private static final String TAG_MAIN_ACTIVITY = "In-MainActivity";
+public class ActivityOptimized extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private static final String TAG_ACTIVITY_OPTIMIZED = "In-MainActivity";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
         // Referencing the 'ListView' and adding 'OnItemClickListener' behaviour to it
         final ListView mListView = (ListView) this.findViewById(R.id.listViewMain);
-            mListView.setOnItemClickListener(this);
-            mListView.setOnItemLongClickListener(this);
+        mListView.setOnItemClickListener(this);
 
         // This 'String[]' data could be retrieved from a file, for instance
         String[] mListValues = {"Android", "iPhone", "WindowsMobile",
@@ -69,11 +65,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         for (int idx = 0; idx < mListValues.length; idx++)
             mListArray.add(new Item(mListImages[idx], mListValues[idx], "A body describing the element in the list"));
 
-            //--------------------------------------
-            // Adding a 'header' to the 'ListView'.  It has to be done BEFORE the adapter is assigned
-            View listHeader = ((LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.list_view_header, mListView, false);
-            mListView.addHeaderView(listHeader, null, true);
-            //---------------------------------------
+        //--------------------------------------
+        // Adding a 'header' to the 'ListView'.  It has to be done BEFORE the adapter is assigned
+        View listHeader = ((LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.list_view_header, mListView, false);
+        mListView.addHeaderView(listHeader, null, true);
+        //---------------------------------------
 
         mListView.setAdapter(new MyListAdapter(this, 0, mListArray));
 
@@ -81,31 +77,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        Log.i(MainActivity.TAG_MAIN_ACTIVITY, "Element " + position + ", with ID = " + id);
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.i(ActivityOptimized.TAG_ACTIVITY_OPTIMIZED, "Element " + position + ", with ID = " + id);
         Toast.makeText(this, "Element " + position + ", with ID = " + id, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        Log.i(MainActivity.TAG_MAIN_ACTIVITY, "Element " + position + ", with ID = " + id + "long-clicked");
-        Toast.makeText(this, "Element " + position + ", with ID = " + id + " long-clicked", Toast.LENGTH_SHORT).show();
-
-        return true;
-    }
-
-
     // That adapter has a constructor and a 'getView()' method to describe the translation between the data item and the View to display
-    // 'getView()' is the method that returns the actual view used as a row within the 'ListView' at a particular position
-    private class MyListAdapter extends ArrayAdapter<Item>
-    {
+// 'getView()' is the method that returns the actual view used as a row within the 'ListView' at a particular position
+    private class MyListAdapter extends ArrayAdapter<Item> {
+        // Creating a ViewHolder to speed up the performance
+        private class ViewHolder {
+            public ImageView icon_ImgView;
+            public TextView title_TxtView;
+            public TextView body_TxtView;
+        }
+
         Context mContext;
         ArrayList<Item> itemList;
 
-        public MyListAdapter(Context context, int resource, ArrayList<Item> objects)
-        {
+        public MyListAdapter(Context context, int resource, ArrayList<Item> objects) {
             super(context, resource, objects);
 
             this.mContext = context;
@@ -113,22 +103,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent)
-        {
+        public View getView(int position, View convertView, ViewGroup parent) {
             // 'convertView' represents the old view to be reused
             // It is convenient to check whether it is non-null or of an appropriate type before using it
-            if (convertView == null)
-            {
+            ViewHolder mViewHolder;
+            if (convertView == null) {
                 LayoutInflater mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = mInflater.inflate(R.layout.list_view_custom_layout, null);
-            }
 
-            ImageView listRow_ImgView = (ImageView) convertView.findViewById(R.id.imageViewList);
-                listRow_ImgView.setImageResource(this.mContext.getResources().getIdentifier(this.itemList.get(position).getmImageRef(), "drawable", this.mContext.getPackageName()));
-            TextView listRowTitle_TxtView = (TextView) convertView.findViewById(R.id.textViewTiltle);
-                listRowTitle_TxtView.setText(this.itemList.get(position).getmTitle());
-            TextView listRowBody_TxtView = (TextView) convertView.findViewById(R.id.textViewBody);
-                listRowBody_TxtView.setText(this.itemList.get(position).getmBody());
+                // Configure a 'ViewHolder'
+                mViewHolder = new ViewHolder();
+                mViewHolder.icon_ImgView = (ImageView) convertView.findViewById(R.id.imageViewList);
+                mViewHolder.title_TxtView = (TextView) convertView.findViewById(R.id.textViewTiltle);
+                mViewHolder.body_TxtView = (TextView) convertView.findViewById(R.id.textViewBody);
+                convertView.setTag(mViewHolder);
+            } else
+                mViewHolder = (ViewHolder) convertView.getTag();
+
+            // Once we are sure the 'ViewHolder' object is attach to 'convertView', we can populate the view
+            mViewHolder.icon_ImgView.setImageResource(this.mContext.getResources().getIdentifier(this.itemList.get(position).getmImageRef(), "drawable", this.mContext.getPackageName()));
+            mViewHolder.title_TxtView.setText(this.itemList.get(position).getmTitle());
+            mViewHolder.body_TxtView.setText(this.itemList.get(position).getmBody());
 
             // To check that views are loaded only when they have to be shown
             //Log.i(MainActivity.TAG_MAIN_ACTIVITY, String.valueOf(this.mContext.getResources().getIdentifier(this.itemList.get(position).getmImageRef(), "drawable", this.mContext.getPackageName())));
