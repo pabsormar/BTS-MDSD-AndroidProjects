@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Background Manager</string>
+    <string name="btn_start_thread_text">Thread</string>
+    <string name="btn_start_async_task_text">Async Task</string>
+</resources>
