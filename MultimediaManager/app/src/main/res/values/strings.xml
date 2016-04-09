@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Multimedia Manager</string>
+    <string name="btn_play_text">Play</string>
+    <string name="btn_stop_text">Stop</string>
+    <string name="btn_play_sound_text">Sound</string>
+    <string name="btn_play_sound_in_service">Play in Service</string>
+    <string name="btn_stop_sound_in_service">Stop in Service</string>
+</resources>
