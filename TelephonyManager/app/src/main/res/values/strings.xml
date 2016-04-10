@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Telephony Manager</string>
+    <string name="txt_view_info_text">Phone Details:</string>
+</resources>
