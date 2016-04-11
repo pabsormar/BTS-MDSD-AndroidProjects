@@ -3,10 +3,13 @@ package org.bts_netmind.dataadaptermanager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +21,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ActivityOptimizedRecyclerView extends AppCompatActivity implements AdapterView.OnItemClickListener
+public class ActivityOptimizedRecyclerView extends AppCompatActivity
 {
     private static final String TAG_ACTIVITY_OPTIMIZED_RECYCLER_VIEW = "In-MainActivity";
 
@@ -28,7 +31,7 @@ public class ActivityOptimizedRecyclerView extends AppCompatActivity implements 
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main_with_recycler_view);
 
-        // Referencing the 'ListView' and adding 'OnItemClickListener' behaviour to it
+        // Referencing the 'RecyclerView'
         final RecyclerView mRecyclerView = (RecyclerView) this.findViewById(R.id.recyclerViewMain);
 
         // This 'String[]' data could be retrieved from a file, for instance
@@ -56,17 +59,13 @@ public class ActivityOptimizedRecyclerView extends AppCompatActivity implements 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the 'RecyclerView'
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Define now how children are organised (in 'LinearLayout', in a 'GridLayout', or in a 'StaggeredLinearLayout'
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        //mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4, LinearLayoutManager.HORIZONTAL, false));
+        //mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL));
         mRecyclerView.setAdapter(new MyListAdapterRecycler(this, mListArray));
 
         //------------------------------------------------------------------------------------------
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-    {
-        Log.i(ActivityOptimizedRecyclerView.TAG_ACTIVITY_OPTIMIZED_RECYCLER_VIEW, "Element " + position + ", with ID = " + id);
-        Toast.makeText(this, "Element " + position + ", with ID = " + id, Toast.LENGTH_SHORT).show();
     }
 
     // This adapter uses the 'RecyclerView.Adapter' for the 'RecyclerView' (which is an optimized 'ListView')
@@ -101,10 +100,16 @@ public class ActivityOptimizedRecyclerView extends AppCompatActivity implements 
 
         // Create new views (invoked by the layout manager)
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+        public ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType)
         {
             // create a new view
             View viewRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_custom_layout, parent, false);
+            viewRow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext, "Clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
             // set the view's size, margins, paddings and layout parameters
             ViewHolder viewRowHolder = new ViewHolder(viewRow);
             return viewRowHolder;

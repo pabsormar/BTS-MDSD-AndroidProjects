@@ -48,11 +48,8 @@ public class ActivityOptimized extends AppCompatActivity implements AdapterView.
         */
         //------------------------------------------------------------------------------------------
 
-
         // Using a custom adapter for the 'ListView' -----------------------------------------------
-
         // 'ArrayList' with image references (DO NOT INCLUDE FILE EXTENSIONS!)
-
         String[] mListImages = {"androidicon", "iphoneicon", "windowsmobileicon",
                 "blackberryicon", "webosicon", "ubuntuicon", "win7icon", "macosxicon",
                 "linuxicon", "os2icon", "ubuntuicon", "win7icon", "macosxicon", "linuxicon",
@@ -83,9 +80,11 @@ public class ActivityOptimized extends AppCompatActivity implements AdapterView.
 
     // That adapter has a constructor and a 'getView()' method to describe the translation between the data item and the View to display
 // 'getView()' is the method that returns the actual view used as a row within the 'ListView' at a particular position
-    private class MyListAdapter extends ArrayAdapter<Item> {
+    private class MyListAdapter extends ArrayAdapter<Item>
+    {
         // Creating a ViewHolder to speed up the performance
-        private class ViewHolder {
+        private class ViewHolder
+        {
             public ImageView icon_ImgView;
             public TextView title_TxtView;
             public TextView body_TxtView;
@@ -94,7 +93,8 @@ public class ActivityOptimized extends AppCompatActivity implements AdapterView.
         Context mContext;
         ArrayList<Item> itemList;
 
-        public MyListAdapter(Context context, int resource, ArrayList<Item> objects) {
+        public MyListAdapter(Context context, int resource, ArrayList<Item> objects)
+        {
             super(context, resource, objects);
 
             this.mContext = context;
@@ -102,11 +102,13 @@ public class ActivityOptimized extends AppCompatActivity implements AdapterView.
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
             // 'convertView' represents the old view to be reused
             // It is convenient to check whether it is non-null or of an appropriate type before using it
             ViewHolder mViewHolder;
-            if (convertView == null) {
+            if (convertView == null)
+            {
                 LayoutInflater mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = mInflater.inflate(R.layout.list_view_custom_layout, null);
 
@@ -116,7 +118,8 @@ public class ActivityOptimized extends AppCompatActivity implements AdapterView.
                 mViewHolder.title_TxtView = (TextView) convertView.findViewById(R.id.textViewTiltle);
                 mViewHolder.body_TxtView = (TextView) convertView.findViewById(R.id.textViewBody);
                 convertView.setTag(mViewHolder);
-            } else
+            }
+            else
                 mViewHolder = (ViewHolder) convertView.getTag();
 
             // Once we are sure the 'ViewHolder' object is attach to 'convertView', we can populate the view

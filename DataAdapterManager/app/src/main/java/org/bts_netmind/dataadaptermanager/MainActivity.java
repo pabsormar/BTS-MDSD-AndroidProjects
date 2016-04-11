@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 "Android", "iPhone", "WindowsMobile"};
 
         // Standard definition to populate a 'ListView' with an 'ArrayList<String>' ----------------
-        /*
+
         ArrayList<String> mListArray = new ArrayList<>();
         // Just populating the 'ArrayList' with the 'String[]'
         for (String aString : mListValues)
@@ -50,14 +50,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mListArray));
-        */
+
         //------------------------------------------------------------------------------------------
-
-
+        /*
         // Using a custom adapter for the 'ListView' -----------------------------------------------
-
         // 'ArrayList' with image references (DO NOT INCLUDE FILE EXTENSIONS!)
-
         String[] mListImages = {"androidicon", "iphoneicon", "windowsmobileicon",
                 "blackberryicon", "webosicon", "ubuntuicon", "win7icon", "macosxicon",
                 "linuxicon", "os2icon", "ubuntuicon", "win7icon", "macosxicon", "linuxicon",
@@ -76,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             //---------------------------------------
 
         mListView.setAdapter(new MyListAdapter(this, 0, mListArray));
-
+        */
         //------------------------------------------------------------------------------------------
     }
 
@@ -96,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         return true;
     }
 
-
     // That adapter has a constructor and a 'getView()' method to describe the translation between the data item and the View to display
     // 'getView()' is the method that returns the actual view used as a row within the 'ListView' at a particular position
     private class MyListAdapter extends ArrayAdapter<Item>
@@ -115,13 +111,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public View getView(int position, View convertView, ViewGroup parent)
         {
-            // 'convertView' represents the old view to be reused
-            // It is convenient to check whether it is non-null or of an appropriate type before using it
-            if (convertView == null)
-            {
-                LayoutInflater mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = mInflater.inflate(R.layout.list_view_custom_layout, null);
-            }
+
+            LayoutInflater mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = mInflater.inflate(R.layout.list_view_custom_layout, null);
 
             ImageView listRow_ImgView = (ImageView) convertView.findViewById(R.id.imageViewList);
                 listRow_ImgView.setImageResource(this.mContext.getResources().getIdentifier(this.itemList.get(position).getmImageRef(), "drawable", this.mContext.getPackageName()));
