@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             sound_Btn.setOnClickListener(this);
         final Button playInService_Btn = (Button) this.findViewById(R.id.btnPlaySoundInService);
             playInService_Btn.setOnClickListener(this);
-        final Button stopInService_Btn = (Button) this.findViewById(R.id.btnPlaySoundInService);
-            stopInService_Btn.setOnClickListener(this);
+        //final Button stopInService_Btn = (Button) this.findViewById(R.id.btnPlaySoundInService);
+        //    stopInService_Btn.setOnClickListener(this);
 
         this.mPlayer = MediaPlayer.create(this, R.raw.bensoundbrazilsamba);
             this.mPlayer = MediaPlayer.create(this, R.raw.bensoundbrazilsamba);

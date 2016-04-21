@@ -50,8 +50,8 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
-  <component name="SvnBranchConfigurationManager">
-    <option name="mySupportsUserInfoFilter" value="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Pablo L\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="masterDetails">
     <states>

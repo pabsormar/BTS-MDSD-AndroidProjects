@@ -33,10 +33,7 @@ public class MyMediaService extends Service implements MediaPlayer.OnPreparedLis
     }
 
     @Override
-    public void onPrepared(MediaPlayer mp)
-    {
-        this.mPlayerInService.start();
-    }
+    public void onPrepared(MediaPlayer mp) { mp.start(); }
 
     @Override
     public void onCompletion(MediaPlayer mp)
