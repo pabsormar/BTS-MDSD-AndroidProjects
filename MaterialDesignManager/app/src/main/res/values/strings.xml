@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mat. Design</string>
+    <string name="coord_layout_txt_view_text">Hello World!</string>
+    <string name="coord_layout_movable_txt_view_text">This TextView has a behaviour assigned</string>
+    <string name="txt_view_title_text">A title</string>
+    <string name="txt_view_body_text">A body</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Indigo 500 -->
+    <color name="colorPrimary_indigo500">#3F51B5</color>
+    <!-- Indigo 700 -->
+    <color name="colorPrimaryDark_indigo700">#303F9F</color>
+    <!-- Indigo 100 -->
+    <color name="colorPrimaryLight_indigo100">#C5CAE9</color>
+    <!-- Lime 500 -->
+    <color name="colorAccent_lime500">#CDDC39</color>
+    <!-- Text -->
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+</resources>

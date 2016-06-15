@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_filter_1_black_24dp"
+            android:tint="@android:color/darker_gray"
+            android:title="One" />
+        <item
+            android:icon="@drawable/ic_filter_2_black_24dp"
+            android:tint="@android:color/darker_gray"
+            android:title="Two" />
+        <item
+            android:icon="@drawable/ic_filter_3_black_24dp"
+            android:tint="@android:color/darker_gray"
+            android:title="Three" />
+    </group>
+
+</menu>

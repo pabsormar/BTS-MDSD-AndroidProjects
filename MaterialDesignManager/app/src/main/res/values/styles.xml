@@ -1,0 +1,10 @@
+<resources>
+    <!-- New custom style defined, including no ActionBar at all, since Material Design employs the 'Toolbar' -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_indigo500</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_indigo700</item>
+        <item name="colorAccent">@color/colorAccent_lime500</item>
+    </style>
+</resources>
