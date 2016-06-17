@@ -13,5 +13,5 @@
         android:icon="@drawable/ic_favorite_white_24dp"
         android:title="Like"
         android:id="@+id/likeOption"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 </menu>

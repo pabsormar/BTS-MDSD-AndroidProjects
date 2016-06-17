@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class ListFragment extends Fragment
 {
-    private ArrayList<Item> mList = new ArrayList<Item>();
+    private ArrayList<Item> mList = new ArrayList<>();
 
     // Required empty public constructor
     public ListFragment()
@@ -47,29 +47,29 @@ public class ListFragment extends Fragment
     {
         // Inflate the layout for this fragment
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.recycler_view_layout, container, false);
-        ContentAdapter mContAdapter = new ContentAdapter(this.getContext(), this.mList);
+        ListContentAdapter mListContAdapter = new ListContentAdapter(this.getContext(), this.mList);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(mContAdapter);
+        recyclerView.setAdapter(mListContAdapter);
 
         return recyclerView;
     }
 
     // Adapter to display recycler view
-    private class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.MyViewHolder>
+    private class ListContentAdapter extends RecyclerView.Adapter<ListContentAdapter.MyListViewHolder>
     {
         Context mContext;
         ArrayList<Item> itemList;
 
         // Creating a 'ViewHolder' to speed up the performance
-        public class MyViewHolder extends RecyclerView.ViewHolder
+        public class MyListViewHolder extends RecyclerView.ViewHolder
         {
             public ImageView icon_ImgView;
             public TextView title_TxtView;
             public TextView body_TxtView;
 
-            public MyViewHolder(View itemView)
+            public MyListViewHolder(View itemView)
             {
                 super(itemView);
 
@@ -80,14 +80,14 @@ public class ListFragment extends Fragment
         }
 
         // Provide a suitable constructor (depends on the kind of dataset)
-        public ContentAdapter(Context context, ArrayList<Item> objects)
+        public ListContentAdapter(Context context, ArrayList<Item> objects)
         {
             this.mContext = context;
             this.itemList = objects;
         }
 
         @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+        public MyListViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
             // create a new view
             View viewRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_custom_layout, parent, false);
@@ -97,14 +97,13 @@ public class ListFragment extends Fragment
                 public void onClick(View v) { Toast.makeText(mContext, "Clicked", Toast.LENGTH_SHORT).show(); }
             });
             // set the view's size, margins, paddings and layout parameters
-            MyViewHolder viewRowHolder = new MyViewHolder(viewRow);
 
-            return viewRowHolder;
+            return new MyListViewHolder(viewRow);
         }
 
         // Replace the contents of a view (invoked by the layout manager)
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position)
+        public void onBindViewHolder(MyListViewHolder holder, int position)
         {
             // get element from your dataset at this position
             // replace the contents of the view with that element

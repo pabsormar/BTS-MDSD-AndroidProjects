@@ -4,4 +4,6 @@
     <string name="coord_layout_movable_txt_view_text">This TextView has a behaviour assigned</string>
     <string name="txt_view_title_text">A title</string>
     <string name="txt_view_body_text">A body</string>
+    <string name="item_title">Palais Garnier</string>
+    <string name="item_desc">The Palais Garnier which locates in Paris was built from 1861 for the Paris Opera.</string>
 </resources>
