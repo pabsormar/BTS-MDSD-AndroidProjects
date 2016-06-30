@@ -1,7 +1,9 @@
-package org.deafsapps.latahonaapp;
+package org.deafsapps.latahonaapp.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import org.deafsapps.latahonaapp.R;
 
 public class MainActivity extends AppCompatActivity
 {
