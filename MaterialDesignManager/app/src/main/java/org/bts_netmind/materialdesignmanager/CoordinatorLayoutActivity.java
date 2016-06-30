@@ -176,6 +176,4 @@ public class CoordinatorLayoutActivity extends AppCompatActivity implements View
 
         public List<String> getFragmentTitleList() { return mFragmentTitleList; }
     }
-
-
 }

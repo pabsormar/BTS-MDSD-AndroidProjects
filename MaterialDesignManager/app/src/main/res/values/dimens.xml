@@ -17,5 +17,4 @@
     <dimen name="article_subheading">16sp</dimen>
     <dimen name="card_image_height">100dp</dimen>
     <dimen name="list_body">14sp</dimen>
-    <dimen name="navheader_height">222dp</dimen>
 </resources>
