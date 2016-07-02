@@ -72,8 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             this.mDrawerLayout.openDrawer(GravityCompat.START);
         }
+        else
+            return false;
 
-        return false;
+        return true;
     }
 
     @Override
