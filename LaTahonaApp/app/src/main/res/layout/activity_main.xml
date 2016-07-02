@@ -36,8 +36,7 @@
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/appViewPager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            android:id="@+id/appViewPager"/>
 
         <!-- The 'layout_behavior' MUST be applied to a direct child of 'CoordinatorLayout' -->
         <!--
