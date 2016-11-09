@@ -16,6 +16,10 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
+/**
+ * This class allows to run instrumentation tests on MainActivity through the 'espresso' API.
+ * Annotations are used for convenience.
+ */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentationTest
@@ -26,11 +30,10 @@ public class MainActivityInstrumentationTest
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void sayHello()
-    {
+    public void sayHello() {
         onView(withId(R.id.editText)).perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
-
         onView(withText("Say hello!")).perform(click());
+        //onView(withId(R.id.button)).perform(click());
 
         final String expectedText = "Hello, " + STRING_TO_BE_TYPED + "!";
         onView(withId(R.id.textView)).check(matches(withText(expectedText)));

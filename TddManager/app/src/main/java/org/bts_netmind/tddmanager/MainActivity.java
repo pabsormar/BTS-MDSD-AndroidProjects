@@ -7,33 +7,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements View.OnClickListener
-{
-    public static final String TAG_MAIN_ACTIVITY = "In-MainActivity";
+public class MainActivity extends Activity implements View.OnClickListener {
+    public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private TextView mTextView;
     private EditText mEditText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.mTextView = (TextView) this.findViewById(R.id.textView);
+        mTextView = (TextView) findViewById(R.id.textView);
+        mEditText = (EditText) findViewById(R.id.editText);
 
-        this.mEditText = (EditText) this.findViewById(R.id.editText);
-
-        final Button mButton = (Button) this.findViewById(R.id.button);
+        final Button mButton = (Button) findViewById(R.id.button);
             mButton.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View whichView)
-    {
-        if(whichView.getId() == R.id.button)
-        {
-            this.mTextView.setText("Hello, " + this.mEditText.getText().toString() + "!");
+    public void onClick(View whichView) {
+        int viewId = whichView.getId();
+
+        if(viewId == R.id.button) {
+            mTextView.setText("Hello, " + mEditText.getText().toString() + "!");
         }
     }
 }

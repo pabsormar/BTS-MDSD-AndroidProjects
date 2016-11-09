@@ -39,6 +39,15 @@ public class MyContentProvider extends ContentProvider
         return db.delete(ParamsDB.TABLE_NAME, selection, selectionArgs);
     }
 
+    /**
+     * Used by applications (either other third-party applications, if the ContentProvider has
+     * been exported) to retrieve the MIME type of the given content URL.
+     * If the app is not concerned with the data's MIME type, it's perfectly fine to simply
+     * return null.
+     *
+     * @param uri
+     * @return
+     */
     @Override
     public String getType(Uri uri)
     {
