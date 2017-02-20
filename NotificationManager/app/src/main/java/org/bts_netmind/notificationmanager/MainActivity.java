@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements View.OnClickListener
         this.mNotifManager = (NotificationManager) this.getSystemService(Service.NOTIFICATION_SERVICE);
         // Builds a notification using the 'NotificationCompat.Builder' subclass
         this.mBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_launcher)   // Even in a custom notification, 'setSmallIcon' is mandatory (to define the status bar icon)
                 .setContentTitle("My notification")
                 .setContentText("This is a simple text for my notification")
                 .setTicker("A Notification")
