@@ -1,0 +1,15 @@
+customerName,dishName,type,gfd,vgd,hmd,sfd,extras
+Peter Parker,Vegetarian mini spring rolls,st,true,false,false,false,Chopsticks
+Peter Parker,Honey sauce with king prawns,mc,false,false,false,false,King prawns-White wine
+Peter Parker,cinammon custard,ds,false,false,false,true,120
+Dora the explorer,cottage salad,st,true,true,false,true,Regular cutlery
+Dora the explorer,mustard sauce aubergines,st,true,true,false,true,No cutlery
+Bruce Wayne,cheesecake portion,ds,false,false,false,true,150
+Louise Lane,Caesar's salad,mc,false,false,true,true,Chicken-Soda
+Bruce Wayne,Kyoto-style ramen,mc,false,true,false,true,Noodles-Rose wine
+Louise Lane,Palak paneer,mc,true,true,false,true,Spinaches-Beer
+Selina Kyle,Chicken tikka masala with veg rice and butter naan,mc,false,false,true,true,Chicken-Beer
+Selina Kyle,Gluten-free pasta salad,st,true,true,false,true,Regular cutlery
+Alex Gordon,Pork loin chow mein,mc,true,false,true,true,Pork loin-Red wine
+Alex Gordon,Singapore rice noodles,mc,true,true,false,true,Noodles-Red wine
+Alex Gordon,Victoria sponge portion,ds,false,false,false,true,135
